@@ -1,7 +1,10 @@
 package top.zhuchl.iocdemo.config;
 
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 import top.zhuchl.iocdemo.annotation.EnableMySelector;
+import top.zhuchl.iocdemo.annotation.MyScaner;
+import top.zhuchl.iocdemo.beandefinition.MyImportDBR;
 
 /**
  * 配置类
@@ -11,5 +14,7 @@ import top.zhuchl.iocdemo.annotation.EnableMySelector;
  **/
 @ComponentScan("top.zhuchl.iocdemo")
 @EnableMySelector
+//@Import({MyImportDBR.class})
+@MyScaner
 public class MyConfig {
 }
