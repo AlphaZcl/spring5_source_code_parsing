@@ -8,6 +8,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import top.zhuchl.iocdemo.config.MyConfig;
 import top.zhuchl.iocdemo.dao.ImportTestDao;
 import top.zhuchl.iocdemo.dao.IndexDao;
+import top.zhuchl.iocdemo.pojo.NameClazz;
+import top.zhuchl.iocdemo.pojo.PersonClazz;
 import top.zhuchl.iocdemo.service.ImportTestService;
 
 /**
@@ -38,5 +40,12 @@ public class IOCTest {
         Object aaa = applicationContext.getBean("aaa");
         System.out.printf("代理对象%s",aaa.getClass().getName()+"\n");
         applicationContext.getBean(ImportTestService.class).find();
+    }
+
+    @Test
+    @DisplayName("自动装配")
+    public void testAutowire(){
+        NameClazz nameClazz = applicationContext.getBean(PersonClazz.class).getNameClazz();
+        System.out.println(nameClazz);
     }
 }

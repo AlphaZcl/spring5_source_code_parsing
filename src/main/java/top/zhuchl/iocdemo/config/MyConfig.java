@@ -4,6 +4,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 import top.zhuchl.iocdemo.annotation.EnableMySelector;
 import top.zhuchl.iocdemo.annotation.MyScaner;
+import top.zhuchl.iocdemo.beandefinition.AutowiredRegistrar;
 import top.zhuchl.iocdemo.beandefinition.MyImportDBR;
 
 /**
@@ -14,7 +15,7 @@ import top.zhuchl.iocdemo.beandefinition.MyImportDBR;
  **/
 @ComponentScan("top.zhuchl.iocdemo")
 @EnableMySelector
-//@Import({MyImportDBR.class})
+@Import({AutowiredRegistrar.class})
 @MyScaner
 public class MyConfig {
 }
