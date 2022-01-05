@@ -15,7 +15,7 @@ import top.zhuchl.iocdemo.beandefinition.MyImportDBR;
  **/
 @ComponentScan("top.zhuchl.iocdemo")
 @EnableMySelector
-@Import({AutowiredRegistrar.class})
+//@Import({AutowiredRegistrar.class})
 @MyScaner
 public class MyConfig {
 }

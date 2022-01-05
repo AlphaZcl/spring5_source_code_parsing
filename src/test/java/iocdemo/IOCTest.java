@@ -10,6 +10,7 @@ import top.zhuchl.iocdemo.dao.ImportTestDao;
 import top.zhuchl.iocdemo.dao.IndexDao;
 import top.zhuchl.iocdemo.pojo.NameClazz;
 import top.zhuchl.iocdemo.pojo.PersonClazz;
+import top.zhuchl.iocdemo.service.AutowiredDemoService;
 import top.zhuchl.iocdemo.service.ImportTestService;
 
 /**
@@ -43,9 +44,15 @@ public class IOCTest {
     }
 
     @Test
-    @DisplayName("自动装配")
-    public void testAutowire(){
+    @DisplayName("自动装配(非注解方式)")
+    public void testAutowireNoAnnot(){
         NameClazz nameClazz = applicationContext.getBean(PersonClazz.class).getNameClazz();
         System.out.println(nameClazz);
+    }
+
+    @Test
+    @DisplayName("自动装配(注解方式)")
+    public void testAutowireAnnot(){
+        applicationContext.getBean(AutowiredDemoService.class).doTest();
     }
 }
