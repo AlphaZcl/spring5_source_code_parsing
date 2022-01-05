@@ -14,7 +14,7 @@ import java.util.List;
  * @Author AlphaZcl
  * @Date 2022/1/4
  **/
-@Service
+//@Service
 public class AutowiredDemoService {
 
     @Autowired
